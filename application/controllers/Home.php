@@ -29,7 +29,7 @@ class Home extends CI_Controller
     public function detailBuku()
     {
         $id = $this->uri->segment(3);
-        $buku = $this->ModelUser->joinKategoriBuku(['buku.id' => $id])->result();
+        $buku = $this->ModelBuku->joinKategoriBuku(['buku.id' => $id])->result();
         $data['user'] = "Pengunjung";
         $data['title'] = "Detail Buku";
         foreach ($buku as $fields) {
