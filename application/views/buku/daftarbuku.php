@@ -5,6 +5,19 @@
 <?php } ?>
 
 <?= $this->session->flashdata('pesan'); ?>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-left my-5">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
 <div style="padding: 25px;">
     <div class="x_panel">
         <div class="x_content">
@@ -22,7 +35,7 @@
                                 <p>
                                     <?php
                                     if ($buku->stok < 1) {
-                                        echo "<i class='btn btn-outline-primary fas fw fa-shopping-cart'> Booking&nbsp;&nbsp 0</i>";
+                                        echo "<i class=' disabled btn btn-outline-primary fas fw fa-ban' style='color:red'> Stock&nbsp;&nbsp 0</i>";
                                     } else {
                                         echo "<a class='btn btn-outline-primary fas fw fa-shopping-cart' href='" . base_url('booking/tambahBooking/' . $buku->id) . "'> Booking</a>";
                                     }
